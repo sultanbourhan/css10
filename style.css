@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.animation{
+ position: relative;
+ width: 100%;
+ height: 100vh;
+ overflow: hidden;
+}
+
+.animation .box{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.animation .box span{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    margin: 0 4px;
+    border-radius: 50%;
+    box-shadow:0 0 0 10px rgb(255 0 0 / 11%), 0 0 50px rgb(255 59 59 / 73%);
+    animation: animate 150s linear infinite;
+    animation-duration: calc(125s / var(--i));
+}
+
+.animation .box span:nth-child(even){
+    background-color: blue;
+    box-shadow:0 0 0 10px rgba(0, 17, 255, 0.11), 0 0 50px rgba(88, 59, 255, 0.73);
+}
+
+@keyframes animate{
+    0%{
+        transform: translateY(100vh) scale(0);
+    }
+    100%{
+        transform: translateY(-10vh) scale(1);
+    }
+}
+
